@@ -148,15 +148,24 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <CheckBox
-            android:id="@+id/remember_me_cb"
+            android:id="@+id/terms_and_condition"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
-            android:text="@string/i_agree_with_terms_and_conditions"
-            android:textColor="#FF2659"
-            app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4" />
+
+        <TextView
+            android:id="@+id/terms_and_conditionTV"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/terms_and_condition"
+            app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+            app:layout_constraintStart_toEndOf="@+id/terms_and_condition"
+            app:layout_constraintTop_toTopOf="@+id/terms_and_condition" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/sign_up_btn"
@@ -172,7 +181,7 @@
             app:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/remember_me_cb" />
+            app:layout_constraintTop_toBottomOf="@+id/terms_and_condition" />
 
         <TextView
             android:id="@+id/signInTV"

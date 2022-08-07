@@ -5,6 +5,10 @@ import static android.content.ContentValues.TAG;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
+import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
@@ -55,6 +59,23 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
 
         binding.signInTV.setOnClickListener(this);
         binding.signUpBtn.setOnClickListener(this);
+        setTerms();
+    }
+
+    private void setTerms() {
+        Spannable span = Spannable.Factory.getInstance().newSpannable(
+                "I agree with term & condition");
+        span.setSpan(new ClickableSpan() {
+            @Override
+            public void onClick(View v) {
+                Snackbar.make(v, "Terms & Condition", Snackbar.LENGTH_LONG).show();
+            }
+        }, 13, span.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+
+        binding.termsAndConditionTV.setText(span);
+        binding.termsAndConditionTV.setMovementMethod(LinkMovementMethod.getInstance());
+
     }
 
     private void initObjects() {
@@ -70,28 +91,33 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
         } else {
 
             if (Util.isInternetConnected(this)) {
-                dialog.show();
-                mAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
+                if (binding.termsAndCondition.isChecked()) {
+                    dialog.show();
+                    mAuth.createUserWithEmailAndPassword(emailInput, passwordInput).addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            String userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
 
-                        Map<String, Object> user = new HashMap<>();
-                        user.put("name", name);
-                        user.put("email", emailInput);
-                        user.put("password", passwordInput);
-                        user.put("number", numberInput);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("name", name);
+                            user.put("email", emailInput);
+                            user.put("password", passwordInput);
+                            user.put("number", numberInput);
 
-                        documentReference = db.collection("users").document(userId);
+                            documentReference = db.collection("users").document(userId);
 
-                        documentReference.set(user)
-                                .addOnSuccessListener(documentReference -> {
-                                    startActivity(new Intent(this, LoginActivity.class));
-                                    finish();
-                                    dialog.dismiss();
-                                })
-                                .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
-                    }
-                });
+                            documentReference.set(user)
+                                    .addOnSuccessListener(documentReference -> {
+                                        startActivity(new Intent(this, LoginActivity.class));
+                                        finish();
+                                        dialog.dismiss();
+                                    })
+                                    .addOnFailureListener(e -> Log.w(TAG, "Error adding document", e));
+                        }
+                    });
+                } else {
+                    Snackbar.make(binding.getRoot(), "Please be agree  with terms & condition", Snackbar.LENGTH_LONG).show();
+                }
+
 
             } else {
                 dialog.dismiss();
@@ -185,6 +211,7 @@ public class SignUpScreen extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         if (view.getId() == R.id.sign_up_btn) {
             SignUp();
+
         } else if (view.getId() == R.id.signInTV) {
             startActivity(new Intent(this, LoginActivity.class));
         }
