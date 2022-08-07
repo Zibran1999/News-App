@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "431681527110",
+    "project_id": "news-app-1659785557059",
+    "storage_bucket": "news-app-1659785557059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:431681527110:android:65e14d326deaf73eb0d947",
+        "android_client_info": {
+          "package_name": "com.zibran.newsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "431681527110-lel532pskt6fo7vj0tmgotp3dopvr69c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLkNVJm0Td5uffxfGDL4GiH7yrgHXRtX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "431681527110-lel532pskt6fo7vj0tmgotp3dopvr69c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

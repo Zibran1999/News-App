@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="title_activity_registration">RegistrationActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="welcome_to_news_app">Welcome to News App</string>
+    <string name="intro">This is a simple news app created using\nRetrofit and news API.</string>
+    <string name="already_a_member">Already a member?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="todo">TODO</string>
+    <string name="create_account">Create Account</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="contact_no">Contact no</string>
+    <string name="i_agree_with_terms_and_conditions">I agree with terms and conditions</string>
+    <string name="do_not_have_account">Don\'t you have an account?</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="user_password">user password</string>
+    <string name="feed_hint">search news Ex. tech, politics</string>
+    <string name="login_with">Login with</string>
+    <string name="_2_hours_ago">2 hours ago</string>
+    <string name="source">BBC News</string>
+    <string name="title">Apple Admit slowing down.</string>
+    <string name="apple_admit_slowing_down">Apple Admit slowing down.</string>
+</resources>
