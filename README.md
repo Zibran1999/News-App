@@ -17,9 +17,9 @@ https://besthomeappliances.online/NumPy/images/app-debug.apk
 
 ## Screenshots
 
-![App Screenshot](https://besthomeappliances.online/NumPy/images/Screenshot_20220807_164317.jpg)
+![App Screenshot](https://besthomeappliances.online/NumPy/images/Screenshot_20220807_164317.jpg | 200*400)
 
-![App Screenshot](https://besthomeappliances.online/NumPy/images/Screenshot_20220807_164321.jpg)
+![App Screenshot](https://besthomeappliances.online/NumPy/images/Screenshot_20220807_164321.jpg | 200x400)
 
 ![App Screenshot](https://besthomeappliances.online/NumPy/images/Screenshot_20220807_164355.jpg)
 
